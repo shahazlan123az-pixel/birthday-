@@ -65,7 +65,8 @@ body {
     background: radial-gradient(circle, #ffe7ef, #ffb8ce);
 }
 
-/* NEW PAGE 2 */
+/* NEW LOVE PAGE */
+
 #pageLove {
     align-items: center;
     justify-content: center;
@@ -132,6 +133,7 @@ body {
     from {
         transform: scale(.8) rotate(-5deg);
     }
+
     to {
         transform: scale(1.15) rotate(5deg);
     }
@@ -205,16 +207,27 @@ body {
 }
 
 @keyframes heartbeat {
-    0%,100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes kissFloat {
-    0%,100% { transform: translateY(0) rotate(-3deg); }
-    50% { transform: translateY(-18px) rotate(3deg); }
+    0%,100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(3deg);
+    }
 }
 
 /* ROSES */
+
 .rose {
     position: fixed;
     top: -70px;
@@ -232,6 +245,7 @@ body {
 }
 
 /* PAGE 3 */
+
 .dob-title {
     font-size: clamp(1.4rem, 5vw, 2.7rem);
     color: #d21f61;
@@ -318,6 +332,7 @@ body {
 }
 
 /* PAGE 4 */
+
 .gift-title {
     font-size: clamp(2rem, 8vw, 4rem);
     color: #d21f61;
@@ -419,6 +434,7 @@ body {
 }
 
 /* NEW GIFT CHOICE PAGE */
+
 #pageGiftChoice {
     align-items: center;
     justify-content: center;
@@ -459,6 +475,7 @@ body {
 }
 
 /* FINAL PAGE */
+
 #pageFinal {
     align-items: center;
     justify-content: center;
@@ -494,7 +511,8 @@ body {
     animation: kissFloat 1.5s infinite;
 }
 
-/* floating hearts */
+/* FLOATING HEARTS */
+
 .heart {
     position: fixed;
     bottom: -50px;
@@ -512,6 +530,7 @@ body {
 }
 
 @media(max-width:600px) {
+
     .letter {
         padding: 18px;
         line-height: 1.65;
@@ -531,80 +550,140 @@ body {
 <body>
 
 <!-- PAGE 1 -->
+
 <section class="page active" id="page1">
-    <h1 class="question">Do you love me? 💗</h1>
+
+    <h1 class="question">
+        Do you love me? 💗
+    </h1>
 
     <div class="buttons">
-        <button class="btn" id="yesBtn" onclick="goToPage('love')">
+
+        <button
+            class="btn"
+            id="yesBtn"
+            onclick="goToPage('love')"
+        >
             YES 💋
         </button>
 
-        <button class="btn" id="noBtn">
+        <button
+            class="btn"
+            id="noBtn"
+        >
             NO 😭
         </button>
+
     </div>
+
 </section>
 
 
-<!-- NEW PAGE AFTER PAGE 1 -->
+<!-- NEW PAGE: WHO DO YOU LOVE MOST -->
+
 <section class="page" id="pageLove">
 
-    <h1 class="love-title">Who do you love the most? 💗</h1>
+    <h1 class="love-title">
+        Who do you love the most? 💗
+    </h1>
 
     <div class="love-options">
 
-        <button class="love-btn" id="rakhiBtn">
+        <button
+            class="love-btn"
+            id="rakhiBtn"
+        >
             Rakhi Sawant 💋
         </button>
 
-        <button class="love-btn" id="madhuriBtn" onclick="chooseMadhuri()">
+        <button
+            class="love-btn"
+            id="madhuriBtn"
+            onclick="chooseMadhuri()"
+        >
             Madhuri 💗
         </button>
 
-        <button class="love-btn" id="ayeshaBtn">
+        <button
+            class="love-btn"
+            id="ayeshaBtn"
+        >
             Ayesha 🥺
         </button>
 
     </div>
 
-    <div class="kiss-show" id="kissShow">
-        <div class="kiss-animation">💋 💋 💋 💋 💋</div>
-        <h2 style="color:#d21f61; margin-top:15px;">
+    <div
+        class="kiss-show"
+        id="kissShow"
+    >
+
+        <div class="kiss-animation">
+            💋 💋 💋 💋 💋
+        </div>
+
+        <h2
+            style="
+                color:#d21f61;
+                margin-top:15px;
+            "
+        >
             Mwahhhhh! 😘💋
         </h2>
-        <button class="next-btn" onclick="goToPage(2)">
+
+        <button
+            class="next-btn"
+            onclick="goToPage(2)"
+        >
             NEXT 💗
         </button>
+
     </div>
 
 </section>
 
 
 <!-- PAGE 2 -->
+
 <section class="page" id="page2">
-    <div class="kisses">💋 💋 💋</div>
+
+    <div class="kisses">
+        💋 💋 💋
+    </div>
 
     <h1 class="birthday-title">
         HAPPY BIRTHDAY<br>
         MY LOVE
     </h1>
 
-    <div class="kisses">🌹 💋 🌹 💋 🌹</div>
+    <div class="kisses">
+        🌹 💋 🌹 💋 🌹
+    </div>
 
-    <button class="next-btn" onclick="goToPage(3)">
+    <button
+        class="next-btn"
+        onclick="goToPage(3)"
+    >
         NEXT 💗
     </button>
+
 </section>
 
 
 <!-- PAGE 3 -->
+
 <section class="page" id="page3">
 
-    <div class="dob-title">Usi date of birth hai 💗</div>
+    <div class="dob-title">
+        Usi date of birth hai 💗
+    </div>
 
-    <div class="dob">25 Sep 2005</div>
+    <div class="dob">
+        25 Sep 2005
+    </div>
 
     <div class="timer">
+
         <div class="time-box">
             <span id="years">0</span>
             <small>Years</small>
@@ -634,15 +713,35 @@ body {
             <span id="seconds">0</span>
             <small>Seconds</small>
         </div>
+
     </div>
 
-    <div class="many-more">may you have many more 💗</div>
+    <div class="many-more">
+        may you have many more 💗
+    </div>
 
     <div class="letter">
 
         <div class="letter-part">
+
             HAPPIEST BIRTHDAY MY JANUUU ,💗 MY TEDDY , MARI PIYARI DOST..
-            geo haxaro saal or  har saal tumhari umar kam hoti rahy ... you are the only besteat thing that  happen to me in 2022 n 2034 😭🥺💋 .sara sach hi yahn nikal gya khair.. I LOVE YOU SOOO MUCH .. you are my safe place... hamesha ro dho k tery pass hi ati ma or auu gi bho hamesha .. yaya bht zyada maza kia hum ny aik sath bht si mastian ki clg ma or kips ( chips)maa  wo alg baat ha k hamesha ap k hissy ki dant many suni sir haris sy😭 teri bhi bht suni mnay wasy tooo but phir bhi  mwhaha ... but baki ap k dost kya hi dost ho gy jo mera makam ha (gussa bardasht krwany wala era ma ma thi) ... birthday wish ❌, tana paragraph ✅... my januuu you are the only in shareek in all my kandss.😹.. or yar ap bht achi ho itna k ma bta hi nhi saktii my teddy only 2 bar kiss ki apkoo bss 😔baki ap krny nhi deti. ... hehhe or hn  ik its not enough k apki birthday ha or ma kuch xyada nhi kr paii but kosish puri kar rahi maaa 😭 k apko khush kruu .
+            geo haxaro saal or har saal tumhari umar kam hoti rahy ...
+            you are the only besteat thing that happen to me in 2022 n 2034
+            😭🥺💋 .sara sach hi yahn nikal gya khair..
+            I LOVE YOU SOOO MUCH .. you are my safe place...
+            hamesha ro dho k tery pass hi ati ma or auu gi bho hamesha ..
+            yaya bht zyada maza kia hum ny aik sath bht si mastian ki clg ma
+            or kips ( chips)maa wo alg baat ha k hamesha ap k hissy ki dant
+            many suni sir haris sy😭 teri bhi bht suni mnay wasy tooo but
+            phir bhi mwhaha ... but baki ap k dost kya hi dost ho gy jo mera
+            makam ha (gussa bardasht krwany wala era ma ma thi) ...
+            birthday wish ❌, tana paragraph ✅...
+            my januuu you are the only in shareek in all my kandss.😹..
+            or yar ap bht achi ho itna k ma bta hi nhi saktii my teddy only
+            2 bar kiss ki apkoo bss 😔baki ap krny nhi deti. ...
+            hehhe or hn ik its not enough k apki birthday ha or ma kuch
+            xyada nhi kr paii but kosish puri kar rahi maaa 😭 k apko khush kruu .
+
         </div>
 
         <div class="photo-grid">
@@ -662,12 +761,19 @@ body {
         </div>
 
         <div class="letter-part">
-            or apka birhday unique bnauu maa my love .💋🫂💗... i hope apko pasand ayyy ... btw miss you sooooooo muchhh 🥺😘... and HAPPY HAPPY HAPPY BIRTHDAYYYY TO YOUUUUUUUUUU .... 💋🫂
+
+            or apka birhday unique bnauu maa my love .💋🫂💗...
+            i hope apko pasand ayyy ... btw miss you sooooooo muchhh 🥺😘...
+            and HAPPY HAPPY HAPPY BIRTHDAYYYY TO YOUUUUUUUUUU .... 💋🫂
+
         </div>
 
     </div>
 
-    <button class="next-btn" onclick="goToPage(4)">
+    <button
+        class="next-btn"
+        onclick="goToPage(4)"
+    >
         NEXT 💗
     </button>
 
@@ -675,27 +781,66 @@ body {
 
 
 <!-- PAGE 4 -->
+
 <section class="page" id="page4">
 
-    <h1 class="gift-title">A gift for you 🎁💗</h1>
+    <h1 class="gift-title">
+        A gift for you 🎁💗
+    </h1>
 
-    <div class="gift" id="gift" onclick="openGift()">
-        <div class="bow">🎀</div>
+    <div
+        class="gift"
+        id="gift"
+        onclick="openGift()"
+    >
+
+        <div class="bow">
+            🎀
+        </div>
+
         <div class="gift-lid"></div>
+
         <div class="gift-box"></div>
+
     </div>
 
-    <div class="final-message" id="finalMessage">
-        <div class="final-kiss">💋💋💋</div>
-        <h1>I LOVE YOU</h1>
-        <div class="final-kiss">💗🫂💗</div>
+    <div
+        class="final-message"
+        id="finalMessage"
+    >
+
+        <div class="final-kiss">
+            💋💋💋
+        </div>
+
+        <h1>
+            I LOVE YOU
+        </h1>
+
+        <div class="final-kiss">
+            💗🫂💗
+        </div>
+
+        <!-- NEW MANUAL NEXT BUTTON -->
+
+        <button
+            class="next-btn"
+            onclick="goToPage('giftChoice')"
+        >
+            NEXT 💗
+        </button>
+
     </div>
 
 </section>
 
 
 <!-- NEW GIFT CHOICE PAGE -->
-<section class="page" id="pageGiftChoice">
+
+<section
+    class="page"
+    id="pageGiftChoice"
+>
 
     <h1 class="gift-choice-title">
         Apko gift mein kia chahiye? 🎁💗
@@ -703,15 +848,24 @@ body {
 
     <div class="gift-options">
 
-        <button class="choice-btn" onclick="chooseGift('Hello Kitty 🎀')">
+        <button
+            class="choice-btn"
+            onclick="chooseGift('Hello Kitty 🎀')"
+        >
             Hello Kitty 🎀
         </button>
 
-        <button class="choice-btn" onclick="chooseGift('Rose 🌹')">
+        <button
+            class="choice-btn"
+            onclick="chooseGift('Rose 🌹')"
+        >
             Rose 🌹
         </button>
 
-        <button class="choice-btn" onclick="chooseGift('Ayesha 💗')">
+        <button
+            class="choice-btn"
+            onclick="chooseGift('Ayesha 💗')"
+        >
             Ayesha 💗
         </button>
 
@@ -720,8 +874,12 @@ body {
 </section>
 
 
-<!-- NEW FINAL PAGE -->
-<section class="page" id="pageFinal">
+<!-- FINAL PAGE -->
+
+<section
+    class="page"
+    id="pageFinal"
+>
 
     <h1 class="final-title">
         Thank You Meri Dost Bane Ke Liye 💗
@@ -759,80 +917,145 @@ body {
 <script>
 
 /* PAGE SWITCH */
+
 function goToPage(number) {
 
     document.querySelectorAll(".page").forEach(page => {
+
         page.classList.remove("active");
         page.style.display = "none";
+
     });
 
     let next;
 
     if (number === "love") {
-        next = document.getElementById("pageLove");
+
+        next =
+            document.getElementById("pageLove");
+
     } else if (number === "giftChoice") {
-        next = document.getElementById("pageGiftChoice");
+
+        next =
+            document.getElementById("pageGiftChoice");
+
     } else if (number === "final") {
-        next = document.getElementById("pageFinal");
+
+        next =
+            document.getElementById("pageFinal");
+
     } else {
-        next = document.getElementById("page" + number);
+
+        next =
+            document.getElementById("page" + number);
+
     }
 
     next.style.display = "flex";
     next.classList.add("active");
 
+
     if (number === 2) {
+
         startRoses();
+
     }
 
+
     if (number === 3) {
+
         updateAge();
 
         if (!ageTimerStarted) {
-            setInterval(updateAge, 1000);
+
+            setInterval(
+                updateAge,
+                1000
+            );
+
             ageTimerStarted = true;
+
         }
+
     }
+
 }
 
 
 /* RUNNING NO BUTTON */
-const noBtn = document.getElementById("noBtn");
+
+const noBtn =
+    document.getElementById("noBtn");
+
 
 function moveNoButton() {
+
     const padding = 20;
 
     const maxX = Math.max(
         padding,
-        window.innerWidth - noBtn.offsetWidth - padding
+        window.innerWidth -
+        noBtn.offsetWidth -
+        padding
     );
 
     const maxY = Math.max(
         padding,
-        window.innerHeight - noBtn.offsetHeight - padding
+        window.innerHeight -
+        noBtn.offsetHeight -
+        padding
     );
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const x =
+        Math.random() * maxX;
 
-    noBtn.style.position = "fixed";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+    const y =
+        Math.random() * maxY;
+
+    noBtn.style.position =
+        "fixed";
+
+    noBtn.style.left =
+        x + "px";
+
+    noBtn.style.top =
+        y + "px";
+
 }
 
-noBtn.addEventListener("mouseenter", moveNoButton);
 
-noBtn.addEventListener("touchstart", function(e) {
-    e.preventDefault();
-    moveNoButton();
-});
+noBtn.addEventListener(
+    "mouseenter",
+    moveNoButton
+);
 
-noBtn.addEventListener("click", moveNoButton);
+
+noBtn.addEventListener(
+    "touchstart",
+    function(e) {
+
+        e.preventDefault();
+
+        moveNoButton();
+
+    }
+);
+
+
+noBtn.addEventListener(
+    "click",
+    moveNoButton
+);
 
 
 /* NEW LOVE PAGE RUNNING BUTTONS */
-const rakhiBtn = document.getElementById("rakhiBtn");
-const ayeshaBtn = document.getElementById("ayeshaBtn");
+
+const rakhiBtn =
+    document.getElementById("rakhiBtn");
+
+const ayeshaBtn =
+    document.getElementById("ayeshaBtn");
+
 
 function moveLoveButton(button) {
 
@@ -840,67 +1063,133 @@ function moveLoveButton(button) {
 
     const maxX = Math.max(
         padding,
-        window.innerWidth - button.offsetWidth - padding
+        window.innerWidth -
+        button.offsetWidth -
+        padding
     );
 
     const maxY = Math.max(
         padding,
-        window.innerHeight - button.offsetHeight - padding
+        window.innerHeight -
+        button.offsetHeight -
+        padding
     );
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const x =
+        Math.random() * maxX;
 
-    button.style.position = "fixed";
-    button.style.left = x + "px";
-    button.style.top = y + "px";
+    const y =
+        Math.random() * maxY;
+
+    button.style.position =
+        "fixed";
+
+    button.style.left =
+        x + "px";
+
+    button.style.top =
+        y + "px";
+
 }
 
-rakhiBtn.addEventListener("mouseenter", function() {
-    moveLoveButton(rakhiBtn);
-});
 
-rakhiBtn.addEventListener("touchstart", function(e) {
-    e.preventDefault();
-    moveLoveButton(rakhiBtn);
-});
+rakhiBtn.addEventListener(
+    "mouseenter",
+    function() {
 
-rakhiBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    moveLoveButton(rakhiBtn);
-});
+        moveLoveButton(rakhiBtn);
 
-ayeshaBtn.addEventListener("mouseenter", function() {
-    moveLoveButton(ayeshaBtn);
-});
+    }
+);
 
-ayeshaBtn.addEventListener("touchstart", function(e) {
-    e.preventDefault();
-    moveLoveButton(ayeshaBtn);
-});
 
-ayeshaBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    moveLoveButton(ayeshaBtn);
-});
+rakhiBtn.addEventListener(
+    "touchstart",
+    function(e) {
+
+        e.preventDefault();
+
+        moveLoveButton(rakhiBtn);
+
+    }
+);
+
+
+rakhiBtn.addEventListener(
+    "click",
+    function(e) {
+
+        e.preventDefault();
+
+        moveLoveButton(rakhiBtn);
+
+    }
+);
+
+
+ayeshaBtn.addEventListener(
+    "mouseenter",
+    function() {
+
+        moveLoveButton(ayeshaBtn);
+
+    }
+);
+
+
+ayeshaBtn.addEventListener(
+    "touchstart",
+    function(e) {
+
+        e.preventDefault();
+
+        moveLoveButton(ayeshaBtn);
+
+    }
+);
+
+
+ayeshaBtn.addEventListener(
+    "click",
+    function(e) {
+
+        e.preventDefault();
+
+        moveLoveButton(ayeshaBtn);
+
+    }
+);
 
 
 /* MADHURI = KISSES */
+
 function chooseMadhuri() {
 
-    document.querySelector(".love-options").style.display = "none";
+    document.querySelector(
+        ".love-options"
+    ).style.display = "none";
 
-    const title = document.querySelector(".love-title");
-    title.innerText = "Awww Madhuri! 😘💗";
+    const title =
+        document.querySelector(
+            ".love-title"
+        );
 
-    document.getElementById("kissShow").classList.add("show");
+    title.innerText =
+        "Awww Madhuri! 😘💗";
+
+    document.getElementById(
+        "kissShow"
+    ).classList.add("show");
 
     createHearts();
+
 }
 
 
 /* ROSE ANIMATION */
+
 let rosesStarted = false;
+
 
 function startRoses() {
 
@@ -908,186 +1197,299 @@ function startRoses() {
 
     rosesStarted = true;
 
+
     setInterval(() => {
 
-        const rose = document.createElement("div");
-        rose.className = "rose";
+        const rose =
+            document.createElement("div");
 
-        const flowers = ["🌹", "🌹", "🌹", "🌷", "💐"];
+        rose.className =
+            "rose";
+
+
+        const flowers = [
+            "🌹",
+            "🌹",
+            "🌹",
+            "🌷",
+            "💐"
+        ];
+
 
         rose.innerText =
-            flowers[Math.floor(Math.random() * flowers.length)];
+            flowers[
+                Math.floor(
+                    Math.random() *
+                    flowers.length
+                )
+            ];
 
-        rose.style.left = Math.random() * 100 + "vw";
+
+        rose.style.left =
+            Math.random() * 100 +
+            "vw";
+
 
         rose.style.animationDuration =
-            (3 + Math.random() * 4) + "s";
+            (3 + Math.random() * 4) +
+            "s";
+
 
         rose.style.fontSize =
-            (25 + Math.random() * 25) + "px";
+            (25 + Math.random() * 25) +
+            "px";
 
-        document.body.appendChild(rose);
 
-        setTimeout(() => rose.remove(), 8000);
+        document.body.appendChild(
+            rose
+        );
+
+
+        setTimeout(
+            () => rose.remove(),
+            8000
+        );
 
     }, 450);
+
 }
 
 
-/* AGE CALCULATOR
-   DOB: 25 September 2005
-*/
-const birthDate = new Date(2005, 8, 25);
+/* AGE CALCULATOR */
+
+const birthDate =
+    new Date(2005, 8, 25);
+
 let ageTimerStarted = false;
+
 
 function updateAge() {
 
-    const now = new Date();
+    const now =
+        new Date();
+
 
     let years =
         now.getFullYear() -
         birthDate.getFullYear();
 
+
     let months =
         now.getMonth() -
         birthDate.getMonth();
+
 
     let days =
         now.getDate() -
         birthDate.getDate();
 
-    let temp = new Date(birthDate);
+
+    let temp =
+        new Date(birthDate);
+
 
     temp.setFullYear(
-        temp.getFullYear() + years
+        temp.getFullYear() +
+        years
     );
+
 
     if (now < temp) {
 
         years--;
 
-        temp = new Date(birthDate);
+        temp =
+            new Date(birthDate);
 
         temp.setFullYear(
-            temp.getFullYear() + years
+            temp.getFullYear() +
+            years
         );
+
     }
+
 
     months =
         now.getMonth() -
         temp.getMonth() +
         12 *
-        (now.getFullYear() -
-        temp.getFullYear());
+        (
+            now.getFullYear() -
+            temp.getFullYear()
+        );
+
 
     if (months < 0) {
+
         months += 12;
+
     }
 
+
     temp.setMonth(
-        temp.getMonth() + months
+        temp.getMonth() +
+        months
     );
+
 
     if (now < temp) {
 
         months--;
 
         if (months < 0) {
+
             months = 11;
+
         }
 
-        temp = new Date(
-            temp.getFullYear(),
-            temp.getMonth(),
-            temp.getDate()
-        );
+
+        temp =
+            new Date(
+                temp.getFullYear(),
+                temp.getMonth(),
+                temp.getDate()
+            );
+
     }
 
-    let remaining = now - temp;
+
+    let remaining =
+        now - temp;
+
 
     let totalSeconds =
-        Math.floor(remaining / 1000);
+        Math.floor(
+            remaining / 1000
+        );
+
 
     const seconds =
         totalSeconds % 60;
 
+
     const minutes =
-        Math.floor(totalSeconds / 60) % 60;
+        Math.floor(
+            totalSeconds / 60
+        ) % 60;
+
 
     const hours =
-        Math.floor(totalSeconds / 3600) % 24;
+        Math.floor(
+            totalSeconds / 3600
+        ) % 24;
 
-    document.getElementById("years").textContent =
+
+    document.getElementById(
+        "years"
+    ).textContent =
         years;
 
-    document.getElementById("months").textContent =
+
+    document.getElementById(
+        "months"
+    ).textContent =
         months;
 
-    document.getElementById("days").textContent =
+
+    document.getElementById(
+        "days"
+    ).textContent =
         days >= 0 ? days : 0;
 
-    document.getElementById("hours").textContent =
+
+    document.getElementById(
+        "hours"
+    ).textContent =
         hours;
 
-    document.getElementById("minutes").textContent =
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
         minutes;
 
-    document.getElementById("seconds").textContent =
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
         seconds;
+
 }
 
 
 /* GIFT */
+
 function openGift() {
 
     const gift =
-        document.getElementById("gift");
+        document.getElementById(
+            "gift"
+        );
+
 
     const message =
-        document.getElementById("finalMessage");
+        document.getElementById(
+            "finalMessage"
+        );
 
-    gift.classList.add("opened");
+
+    gift.classList.add(
+        "opened"
+    );
+
 
     setTimeout(() => {
 
-        gift.style.display = "none";
+        gift.style.display =
+            "none";
 
-        message.classList.add("show");
+        message.classList.add(
+            "show"
+        );
 
         createHearts();
 
-        /* After showing existing gift message,
-           move to new gift-choice page */
-        setTimeout(() => {
-            goToPage("giftChoice");
-        }, 2500);
-
     }, 700);
+
 }
 
 
 /* GIFT CHOICE */
+
 function chooseGift(choice) {
 
     createHearts();
 
     setTimeout(() => {
+
         goToPage("final");
+
     }, 700);
+
 }
 
 
 /* HEARTS */
+
 function createHearts() {
 
-    for (let i = 0; i < 35; i++) {
+    for (
+        let i = 0;
+        i < 35;
+        i++
+    ) {
 
         setTimeout(() => {
 
             const heart =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
-            heart.className = "heart";
+
+            heart.className =
+                "heart";
+
 
             const hearts = [
                 "💗",
@@ -1098,6 +1500,7 @@ function createHearts() {
                 "❤️"
             ];
 
+
             heart.innerText =
                 hearts[
                     Math.floor(
@@ -1106,18 +1509,32 @@ function createHearts() {
                     )
                 ];
 
+
             heart.style.left =
-                Math.random() * 100 + "vw";
+                Math.random() * 100 +
+                "vw";
+
 
             heart.style.setProperty(
                 "--x",
-                (Math.random() * 200 - 100) + "px"
+                (
+                    Math.random() * 200 -
+                    100
+                ) + "px"
             );
 
-            heart.style.animationDuration =
-                (3 + Math.random() * 3) + "s";
 
-            document.body.appendChild(heart);
+            heart.style.animationDuration =
+                (
+                    3 +
+                    Math.random() * 3
+                ) + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
 
             setTimeout(
                 () => heart.remove(),
@@ -1125,7 +1542,9 @@ function createHearts() {
             );
 
         }, i * 100);
+
     }
+
 }
 
 </script>
