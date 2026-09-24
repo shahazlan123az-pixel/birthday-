@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    overflow: hidden;
+    background: #ffdce8;
+    color: #5a1630;
+}
+
+.page {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+#page1 {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 20% 20%, #fff 0 2px, transparent 3px),
+        linear-gradient(135deg, #ffd1df, #fff0f5);
+}
+
+#page2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffb6ca, #ffe5ed, #ffb3c8);
+}
+
+#page3 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#fff0f5, #ffd9e6);
+    padding: 25px 15px 50px;
+}
+
+#page4 {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(circle, #ffe7ef, #ffb8ce);
+}
+
+.question {
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    color: #c2185b;
+    font-weight: 800;
+    margin-bottom: 45px;
+    padding: 0 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 38px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #b85a7840;
+    transition: transform .2s;
+}
+
+#yesBtn {
+    background: #ff3f79;
+    color: white;
+}
+
+#noBtn {
+    background: white;
+    color: #ff3f79;
+    position: relative;
+}
+
+.birthday-title {
+    font-size: clamp(2.5rem, 10vw, 7rem);
+    color: #fff;
+    text-shadow:
+        0 5px 0 #d82f65,
+        0 10px 25px #9b164c70;
+    animation: heartbeat 1.4s infinite;
+    z-index: 5;
+}
+
+.kisses {
+    font-size: clamp(2rem, 8vw, 5rem);
+    margin: 20px;
+    animation: kissFloat 2s infinite ease-in-out;
+}
+
+.next-btn {
+    margin-top: 35px;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #fff;
+    color: #d81b60;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 25px #9c234850;
+    z-index: 10;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes kissFloat {
+    0%,100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-18px) rotate(3deg); }
+}
+
+/* ROSES */
+.rose {
+    position: fixed;
+    top: -70px;
+    font-size: 35px;
+    animation: fall linear forwards;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* PAGE 3 */
+.dob-title {
+    font-size: clamp(1.4rem, 5vw, 2.7rem);
+    color: #d21f61;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.dob {
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+    color: #8b1746;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin: 12px auto 5px;
+    max-width: 850px;
+}
+
+.time-box {
+    background: #fff;
+    border-radius: 18px;
+    min-width: 78px;
+    padding: 12px 10px;
+    box-shadow: 0 8px 25px #c92c6340;
+}
+
+.time-box span {
+    display: block;
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    font-weight: 800;
+    color: #d51d60;
+}
+
+.time-box small {
+    color: #8b1746;
+    font-weight: 600;
+}
+
+.many-more {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    font-weight: 700;
+    color: #d21f61;
+    margin: 12px 0 25px;
+}
+
+.letter {
+    width: min(900px, 95%);
+    background: #fff8fb;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 12px 35px #9b245030;
+    line-height: 1.8;
+    font-size: clamp(1rem, 3.8vw, 1.18rem);
+    text-align: left;
+}
+
+.letter-part {
+    margin-bottom: 25px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px #7c173c30;
+    transition: transform .3s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.04) rotate(1deg);
+}
+
+/* PAGE 4 */
+.gift-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    color: #d21f61;
+    margin-bottom: 40px;
+}
+
+.gift {
+    position: relative;
+    width: 180px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.gift:hover {
+    transform: scale(1.08);
+}
+
+.gift-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    height: 115px;
+    background: linear-gradient(135deg, #ff477e, #d91757);
+    border-radius: 8px;
+    box-shadow: 0 15px 30px #92153e55;
+}
+
+.gift-box::before {
+    content: "";
+    position: absolute;
+    left: 72px;
+    width: 35px;
+    height: 100%;
+    background: #ffd33d;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    width: 200px;
+    height: 35px;
+    background: #ff316c;
+    border-radius: 7px;
+    z-index: 2;
+}
+
+.gift-lid::before {
+    content: "";
+    position: absolute;
+    left: 82px;
+    width: 35px;
+    height: 35px;
+    background: #ffd33d;
+}
+
+.bow {
+    position: absolute;
+    top: -10px;
+    left: 65px;
+    font-size: 55px;
+    z-index: 5;
+}
+
+.opened .gift-lid {
+    animation: lidOpen .7s forwards;
+}
+
+@keyframes lidOpen {
+    to {
+        transform: translateY(-100px) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+.final-message {
+    display: none;
+    margin-top: 35px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.final-message.show {
+    display: flex;
+}
+
+.final-message h1 {
+    font-size: clamp(3rem, 15vw, 8rem);
+    color: #e71963;
+    animation: heartbeat 1s infinite;
+    text-shadow: 0 8px 20px #9e164c50;
+}
+
+.final-kiss {
+    font-size: 5rem;
+    animation: kissFloat 1.5s infinite;
+}
+
+/* floating hearts */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: heartUp 5s linear forwards;
+    z-index: 1;
+}
+
+@keyframes heartUp {
+    to {
+        transform: translateY(-115vh) translateX(var(--x)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width:600px) {
+    .letter {
+        padding: 18px;
+        line-height: 1.65;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo-grid img {
+        height: 220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+    <h1 class="question">Do you love me? 💗</h1>
+
+    <div class="buttons">
+        <button class="btn" id="yesBtn" onclick="goToPage(2)">
+            YES 💋
+        </button>
+
+        <button class="btn" id="noBtn">
+            NO 😭
+        </button>
+    </div>
+</section>
+
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+    <div class="kisses">💋 💋 💋</div>
+
+    <h1 class="birthday-title">
+        HAPPY BIRTHDAY<br>
+        MY LOVE
+    </h1>
+
+    <div class="kisses">🌹 💋 🌹 💋 🌹</div>
+
+    <button class="next-btn" onclick="goToPage(3)">
+        NEXT 💗
+    </button>
+</section>
+
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+
+    <div class="dob-title">Usi date of birth hai 💗</div>
+
+    <div class="dob">25 Sep 2005</div>
+
+    <div class="timer">
+        <div class="time-box">
+            <span id="years">0</span>
+            <small>Years</small>
+        </div>
+
+        <div class="time-box">
+            <span id="months">0</span>
+            <small>Months</small>
+        </div>
+
+        <div class="time-box">
+            <span id="days">0</span>
+            <small>Days</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">0</span>
+            <small>Hours</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">0</span>
+            <small>Minutes</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">0</span>
+            <small>Seconds</small>
+        </div>
+    </div>
+
+    <div class="many-more">may you have many more 💗</div>
+
+    <div class="letter">
+
+        <div class="letter-part">
+            HAPPIEST BIRTHDAY MY JANUUU ,💗 MY TEDDY , MARI PIYARI DOST..
+            geo haxaro saal or  har saal tumhari umar kam hoti rahy ... you are the only besteat thing that  happen to me in 2022 n 2034 😭🥺💋 .sara sach hi yahn nikal gya khair.. I LOVE YOU SOOO MUCH .. you are my safe place... hamesha ro dho k tery pass hi ati ma or auu gi bho hamesha .. yaya bht zyada maza kia hum ny aik sath bht si mastian ki clg ma or kips ( chips)maa  wo alg baat ha k hamesha ap k hissy ki dant many suni sir haris sy😭 teri bhi bht suni mnay wasy tooo but phir bhi  mwhaha ... but baki ap k dost kya hi dost ho gy jo mera makam ha (gussa bardasht krwany wala era ma ma thi) ... birthday wish ❌, tana paragraph ✅... my januuu you are the only in shareek in all my kandss.😹.. or yar ap bht achi ho itna k ma bta hi nhi saktii my teddy only 2 bar kiss ki apkoo bss 😔baki ap krny nhi deti. ... hehhe or hn  ik its not enough k apki birthday ha or ma kuch xyada nhi kr paii but kosish puri kr rahi maaa 😭 k apko khush kruu .
+        </div>
+
+        <div class="photo-grid">
+
+            <img src="https://i.ibb.co/LzfDpQCH/814998455-1081539448074176-1751155053716500960-n.png">
+
+            <img src="https://i.ibb.co/5W8ZHQ76/817718170-1114569377784845-3815107773706115434-n-1.png">
+
+            <img src="https://i.ibb.co/GvFPXVsT/818597816-1786472612380317-245629493690639675-n.png">
+
+            <img src="https://i.ibb.co/C5hBQvsw/818685027-1070126672569417-1696875825493236960-n.png">
+
+            <img src="https://i.ibb.co/dskmvbmz/820500229-1428474192587050-3332693746996891208-n.png">
+
+            <img src="https://i.ibb.co/kg5DfnCQ/821655260-1080005194885049-664684155796930213-n.png">
+
+        </div>
+
+        <div class="letter-part">
+            or apka birhday unique bnauu maa my love .💋🫂💗... i hope apko pasand ayyy ... btw miss you sooooooo muchhh 🥺😘... and HAPPY HAPPY HAPPY BIRTHDAYYYY TO YOUUUUUUUUUU .... 💋🫂
+        </div>
+
+    </div>
+
+    <button class="next-btn" onclick="goToPage(4)">
+        NEXT 💗
+    </button>
+
+</section>
+
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+
+    <h1 class="gift-title">A gift for you 🎁💗</h1>
+
+    <div class="gift" id="gift" onclick="openGift()">
+        <div class="bow">🎀</div>
+        <div class="gift-lid"></div>
+        <div class="gift-box"></div>
+    </div>
+
+    <div class="final-message" id="finalMessage">
+        <div class="final-kiss">💋💋💋</div>
+        <h1>I LOVE YOU</h1>
+        <div class="final-kiss">💗🫂💗</div>
+    </div>
+
+</section>
+
+
+<script>
+
+/* PAGE SWITCH */
+function goToPage(number) {
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+        page.style.display = "none";
+    });
+
+    const next = document.getElementById("page" + number);
+    next.style.display = "flex";
+    next.classList.add("active");
+
+    if (number === 2) {
+        startRoses();
+    }
+
+    if (number === 3) {
+        updateAge();
+        setInterval(updateAge, 1000);
+    }
+}
+
+
+/* RUNNING NO BUTTON */
+const noBtn = document.getElementById("noBtn");
+
+function moveNoButton() {
+    const padding = 20;
+
+    const maxX = Math.max(
+        padding,
+        window.innerWidth - noBtn.offsetWidth - padding
+    );
+
+    const maxY = Math.max(
+        padding,
+        window.innerHeight - noBtn.offsetHeight - padding
+    );
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseenter", moveNoButton);
+noBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    moveNoButton();
+});
+noBtn.addEventListener("click", moveNoButton);
+
+
+/* ROSE ANIMATION */
+function startRoses() {
+    setInterval(() => {
+        const rose = document.createElement("div");
+        rose.className = "rose";
+
+        const flowers = ["🌹", "🌹", "🌹", "🌷", "💐"];
+        rose.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+
+        rose.style.left = Math.random() * 100 + "vw";
+        rose.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        rose.style.fontSize =
+            (25 + Math.random() * 25) + "px";
+
+        document.body.appendChild(rose);
+
+        setTimeout(() => rose.remove(), 8000);
+    }, 450);
+}
+
+
+/* AGE CALCULATOR
+   DOB: 25 September 2005
+*/
+const birthDate = new Date(2005, 8, 25);
+
+function updateAge() {
+    const now = new Date();
+
+    let years = now.getFullYear() - birthDate.getFullYear();
+    let months = now.getMonth() - birthDate.getMonth();
+    let days = now.getDate() - birthDate.getDate();
+
+    let temp = new Date(birthDate);
+    temp.setFullYear(temp.getFullYear() + years);
+
+    if (now < temp) {
+        years--;
+        temp = new Date(birthDate);
+        temp.setFullYear(temp.getFullYear() + years);
+    }
+
+    months =
+        now.getMonth() -
+        temp.getMonth() +
+        12 * (now.getFullYear() - temp.getFullYear());
+
+    if (months < 0) months += 12;
+
+    temp.setMonth(temp.getMonth() + months);
+
+    if (now < temp) {
+        months--;
+
+        if (months < 0) {
+            months = 11;
+        }
+
+        temp = new Date(
+            temp.getFullYear(),
+            temp.getMonth(),
+            temp.getDate()
+        );
+    }
+
+    let remaining = now - temp;
+
+    let totalSeconds = Math.floor(remaining / 1000);
+
+    const seconds = totalSeconds % 60;
+    const minutes = Math.floor(totalSeconds / 60) % 60;
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+
+    document.getElementById("years").textContent = years;
+    document.getElementById("months").textContent = months;
+    document.getElementById("days").textContent = days >= 0 ? days : 0;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+
+/* GIFT */
+function openGift() {
+    const gift = document.getElementById("gift");
+    const message = document.getElementById("finalMessage");
+
+    gift.classList.add("opened");
+
+    setTimeout(() => {
+        gift.style.display = "none";
+        message.classList.add("show");
+
+        createHearts();
+    }, 700);
+}
+
+
+/* HEARTS */
+function createHearts() {
+    for (let i = 0; i < 35; i++) {
+        setTimeout(() => {
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            const hearts = ["💗", "💖", "💕", "💘", "💋", "❤️"];
+            heart.innerText =
+                hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.setProperty(
+                "--x",
+                (Math.random() * 200 - 100) + "px"
+            );
+
+            heart.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 7000);
+        }, i * 100);
+    }
+}
+
+</script>
+
+</body>
+</html>
