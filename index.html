@@ -65,6 +65,78 @@ body {
     background: radial-gradient(circle, #ffe7ef, #ffb8ce);
 }
 
+/* NEW PAGE 2 */
+#pageLove {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffd1df, #fff0f5, #ffb6ca);
+    padding: 20px;
+}
+
+.love-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    color: #c2185b;
+    font-weight: 800;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.love-options {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: min(400px, 90%);
+    align-items: center;
+}
+
+.love-btn {
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background: #ff3f79;
+    box-shadow: 0 8px 20px #b85a7840;
+    transition: transform .2s;
+}
+
+.love-btn:hover {
+    transform: scale(1.04);
+}
+
+#rakhiBtn,
+#ayeshaBtn {
+    position: relative;
+}
+
+.kiss-show {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kiss-show.show {
+    display: flex;
+}
+
+.kiss-animation {
+    font-size: clamp(3rem, 12vw, 7rem);
+    animation: kissBurst .7s infinite alternate ease-in-out;
+}
+
+@keyframes kissBurst {
+    from {
+        transform: scale(.8) rotate(-5deg);
+    }
+    to {
+        transform: scale(1.15) rotate(5deg);
+    }
+}
+
 .question {
     font-size: clamp(2rem, 8vw, 4.5rem);
     color: #c2185b;
@@ -346,6 +418,82 @@ body {
     animation: kissFloat 1.5s infinite;
 }
 
+/* NEW GIFT CHOICE PAGE */
+#pageGiftChoice {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffe5ed, #ffb6ca, #fff0f5);
+    padding: 20px;
+}
+
+.gift-choice-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    color: #d21f61;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.gift-options {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: min(400px, 90%);
+}
+
+.choice-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 16px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: #ff3f79;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #b85a7840;
+    transition: transform .2s;
+}
+
+.choice-btn:hover {
+    transform: scale(1.04);
+}
+
+/* FINAL PAGE */
+#pageFinal {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 20% 20%, #fff 0 2px, transparent 3px),
+        linear-gradient(135deg, #ffd1df, #fff0f5, #ffb3c8);
+    padding: 25px;
+}
+
+.final-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    color: #d21f61;
+    font-weight: 800;
+    margin-bottom: 25px;
+    animation: heartbeat 1.4s infinite;
+}
+
+.final-text {
+    width: min(850px, 94%);
+    background: #fff8fb;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 12px 35px #9b245030;
+    line-height: 1.8;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    color: #5a1630;
+}
+
+.final-love {
+    margin-top: 25px;
+    font-size: clamp(2rem, 8vw, 4rem);
+    animation: kissFloat 1.5s infinite;
+}
+
 /* floating hearts */
 .heart {
     position: fixed;
@@ -353,7 +501,7 @@ body {
     font-size: 25px;
     pointer-events: none;
     animation: heartUp 5s linear forwards;
-    z-index: 1;
+    z-index: 20;
 }
 
 @keyframes heartUp {
@@ -387,7 +535,7 @@ body {
     <h1 class="question">Do you love me? 💗</h1>
 
     <div class="buttons">
-        <button class="btn" id="yesBtn" onclick="goToPage(2)">
+        <button class="btn" id="yesBtn" onclick="goToPage('love')">
             YES 💋
         </button>
 
@@ -395,6 +543,40 @@ body {
             NO 😭
         </button>
     </div>
+</section>
+
+
+<!-- NEW PAGE AFTER PAGE 1 -->
+<section class="page" id="pageLove">
+
+    <h1 class="love-title">Who do you love the most? 💗</h1>
+
+    <div class="love-options">
+
+        <button class="love-btn" id="rakhiBtn">
+            Rakhi Sawant 💋
+        </button>
+
+        <button class="love-btn" id="madhuriBtn" onclick="chooseMadhuri()">
+            Madhuri 💗
+        </button>
+
+        <button class="love-btn" id="ayeshaBtn">
+            Ayesha 🥺
+        </button>
+
+    </div>
+
+    <div class="kiss-show" id="kissShow">
+        <div class="kiss-animation">💋 💋 💋 💋 💋</div>
+        <h2 style="color:#d21f61; margin-top:15px;">
+            Mwahhhhh! 😘💋
+        </h2>
+        <button class="next-btn" onclick="goToPage(2)">
+            NEXT 💗
+        </button>
+    </div>
+
 </section>
 
 
@@ -460,7 +642,7 @@ body {
 
         <div class="letter-part">
             HAPPIEST BIRTHDAY MY JANUUU ,💗 MY TEDDY , MARI PIYARI DOST..
-            geo haxaro saal or  har saal tumhari umar kam hoti rahy ... you are the only besteat thing that  happen to me in 2022 n 2034 😭🥺💋 .sara sach hi yahn nikal gya khair.. I LOVE YOU SOOO MUCH .. you are my safe place... hamesha ro dho k tery pass hi ati ma or auu gi bho hamesha .. yaya bht zyada maza kia hum ny aik sath bht si mastian ki clg ma or kips ( chips)maa  wo alg baat ha k hamesha ap k hissy ki dant many suni sir haris sy😭 teri bhi bht suni mnay wasy tooo but phir bhi  mwhaha ... but baki ap k dost kya hi dost ho gy jo mera makam ha (gussa bardasht krwany wala era ma ma thi) ... birthday wish ❌, tana paragraph ✅... my januuu you are the only in shareek in all my kandss.😹.. or yar ap bht achi ho itna k ma bta hi nhi saktii my teddy only 2 bar kiss ki apkoo bss 😔baki ap krny nhi deti. ... hehhe or hn  ik its not enough k apki birthday ha or ma kuch xyada nhi kr paii but kosish puri kr rahi maaa 😭 k apko khush kruu .
+            geo haxaro saal or  har saal tumhari umar kam hoti rahy ... you are the only besteat thing that  happen to me in 2022 n 2034 😭🥺💋 .sara sach hi yahn nikal gya khair.. I LOVE YOU SOOO MUCH .. you are my safe place... hamesha ro dho k tery pass hi ati ma or auu gi bho hamesha .. yaya bht zyada maza kia hum ny aik sath bht si mastian ki clg ma or kips ( chips)maa  wo alg baat ha k hamesha ap k hissy ki dant many suni sir haris sy😭 teri bhi bht suni mnay wasy tooo but phir bhi  mwhaha ... but baki ap k dost kya hi dost ho gy jo mera makam ha (gussa bardasht krwany wala era ma ma thi) ... birthday wish ❌, tana paragraph ✅... my januuu you are the only in shareek in all my kandss.😹.. or yar ap bht achi ho itna k ma bta hi nhi saktii my teddy only 2 bar kiss ki apkoo bss 😔baki ap krny nhi deti. ... hehhe or hn  ik its not enough k apki birthday ha or ma kuch xyada nhi kr paii but kosish puri kar rahi maaa 😭 k apko khush kruu .
         </div>
 
         <div class="photo-grid">
@@ -512,16 +694,90 @@ body {
 </section>
 
 
+<!-- NEW GIFT CHOICE PAGE -->
+<section class="page" id="pageGiftChoice">
+
+    <h1 class="gift-choice-title">
+        Apko gift mein kia chahiye? 🎁💗
+    </h1>
+
+    <div class="gift-options">
+
+        <button class="choice-btn" onclick="chooseGift('Hello Kitty 🎀')">
+            Hello Kitty 🎀
+        </button>
+
+        <button class="choice-btn" onclick="chooseGift('Rose 🌹')">
+            Rose 🌹
+        </button>
+
+        <button class="choice-btn" onclick="chooseGift('Ayesha 💗')">
+            Ayesha 💗
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- NEW FINAL PAGE -->
+<section class="page" id="pageFinal">
+
+    <h1 class="final-title">
+        Thank You Meri Dost Bane Ke Liye 💗
+    </h1>
+
+    <div class="final-text">
+
+        HAPPIEST BIRTHDAY MY MOST PERICIOUS GIRL ....💗😘🫂
+
+        <br><br>
+
+        i love you sooo much and hope you have the best birhday .🫂🥰...
+
+        or i hope apko ye acha lga ho ga or na bhi lga ho to bhi bolna k acha lga😜....
+
+        baki may you live long....
+
+        <br><br>
+
+        mwah 💋mwah mwah 💋mwah mwah 💋mwah mwah💋 mwah mwah mwah mwah mwah mwah 💋mwah 💋mwah mwah💋 mwah mwah wmah 💋
+
+        <br><br>
+
+        happy birthday once again✨
+
+    </div>
+
+    <div class="final-love">
+        ❤️💋🫂💗🌹✨💕
+    </div>
+
+</section>
+
+
 <script>
 
 /* PAGE SWITCH */
 function goToPage(number) {
+
     document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
         page.style.display = "none";
     });
 
-    const next = document.getElementById("page" + number);
+    let next;
+
+    if (number === "love") {
+        next = document.getElementById("pageLove");
+    } else if (number === "giftChoice") {
+        next = document.getElementById("pageGiftChoice");
+    } else if (number === "final") {
+        next = document.getElementById("pageFinal");
+    } else {
+        next = document.getElementById("page" + number);
+    }
+
     next.style.display = "flex";
     next.classList.add("active");
 
@@ -531,7 +787,11 @@ function goToPage(number) {
 
     if (number === 3) {
         updateAge();
-        setInterval(updateAge, 1000);
+
+        if (!ageTimerStarted) {
+            setInterval(updateAge, 1000);
+            ageTimerStarted = true;
+        }
     }
 }
 
@@ -561,23 +821,105 @@ function moveNoButton() {
 }
 
 noBtn.addEventListener("mouseenter", moveNoButton);
+
 noBtn.addEventListener("touchstart", function(e) {
     e.preventDefault();
     moveNoButton();
 });
+
 noBtn.addEventListener("click", moveNoButton);
 
 
+/* NEW LOVE PAGE RUNNING BUTTONS */
+const rakhiBtn = document.getElementById("rakhiBtn");
+const ayeshaBtn = document.getElementById("ayeshaBtn");
+
+function moveLoveButton(button) {
+
+    const padding = 20;
+
+    const maxX = Math.max(
+        padding,
+        window.innerWidth - button.offsetWidth - padding
+    );
+
+    const maxY = Math.max(
+        padding,
+        window.innerHeight - button.offsetHeight - padding
+    );
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    button.style.position = "fixed";
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+
+rakhiBtn.addEventListener("mouseenter", function() {
+    moveLoveButton(rakhiBtn);
+});
+
+rakhiBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    moveLoveButton(rakhiBtn);
+});
+
+rakhiBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    moveLoveButton(rakhiBtn);
+});
+
+ayeshaBtn.addEventListener("mouseenter", function() {
+    moveLoveButton(ayeshaBtn);
+});
+
+ayeshaBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    moveLoveButton(ayeshaBtn);
+});
+
+ayeshaBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    moveLoveButton(ayeshaBtn);
+});
+
+
+/* MADHURI = KISSES */
+function chooseMadhuri() {
+
+    document.querySelector(".love-options").style.display = "none";
+
+    const title = document.querySelector(".love-title");
+    title.innerText = "Awww Madhuri! 😘💗";
+
+    document.getElementById("kissShow").classList.add("show");
+
+    createHearts();
+}
+
+
 /* ROSE ANIMATION */
+let rosesStarted = false;
+
 function startRoses() {
+
+    if (rosesStarted) return;
+
+    rosesStarted = true;
+
     setInterval(() => {
+
         const rose = document.createElement("div");
         rose.className = "rose";
 
         const flowers = ["🌹", "🌹", "🌹", "🌷", "💐"];
-        rose.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+
+        rose.innerText =
+            flowers[Math.floor(Math.random() * flowers.length)];
 
         rose.style.left = Math.random() * 100 + "vw";
+
         rose.style.animationDuration =
             (3 + Math.random() * 4) + "s";
 
@@ -587,6 +929,7 @@ function startRoses() {
         document.body.appendChild(rose);
 
         setTimeout(() => rose.remove(), 8000);
+
     }, 450);
 }
 
@@ -595,33 +938,58 @@ function startRoses() {
    DOB: 25 September 2005
 */
 const birthDate = new Date(2005, 8, 25);
+let ageTimerStarted = false;
 
 function updateAge() {
+
     const now = new Date();
 
-    let years = now.getFullYear() - birthDate.getFullYear();
-    let months = now.getMonth() - birthDate.getMonth();
-    let days = now.getDate() - birthDate.getDate();
+    let years =
+        now.getFullYear() -
+        birthDate.getFullYear();
+
+    let months =
+        now.getMonth() -
+        birthDate.getMonth();
+
+    let days =
+        now.getDate() -
+        birthDate.getDate();
 
     let temp = new Date(birthDate);
-    temp.setFullYear(temp.getFullYear() + years);
+
+    temp.setFullYear(
+        temp.getFullYear() + years
+    );
 
     if (now < temp) {
+
         years--;
+
         temp = new Date(birthDate);
-        temp.setFullYear(temp.getFullYear() + years);
+
+        temp.setFullYear(
+            temp.getFullYear() + years
+        );
     }
 
     months =
         now.getMonth() -
         temp.getMonth() +
-        12 * (now.getFullYear() - temp.getFullYear());
+        12 *
+        (now.getFullYear() -
+        temp.getFullYear());
 
-    if (months < 0) months += 12;
+    if (months < 0) {
+        months += 12;
+    }
 
-    temp.setMonth(temp.getMonth() + months);
+    temp.setMonth(
+        temp.getMonth() + months
+    );
 
     if (now < temp) {
+
         months--;
 
         if (months < 0) {
@@ -637,50 +1005,110 @@ function updateAge() {
 
     let remaining = now - temp;
 
-    let totalSeconds = Math.floor(remaining / 1000);
+    let totalSeconds =
+        Math.floor(remaining / 1000);
 
-    const seconds = totalSeconds % 60;
-    const minutes = Math.floor(totalSeconds / 60) % 60;
-    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const seconds =
+        totalSeconds % 60;
 
-    document.getElementById("years").textContent = years;
-    document.getElementById("months").textContent = months;
-    document.getElementById("days").textContent = days >= 0 ? days : 0;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+    const minutes =
+        Math.floor(totalSeconds / 60) % 60;
+
+    const hours =
+        Math.floor(totalSeconds / 3600) % 24;
+
+    document.getElementById("years").textContent =
+        years;
+
+    document.getElementById("months").textContent =
+        months;
+
+    document.getElementById("days").textContent =
+        days >= 0 ? days : 0;
+
+    document.getElementById("hours").textContent =
+        hours;
+
+    document.getElementById("minutes").textContent =
+        minutes;
+
+    document.getElementById("seconds").textContent =
+        seconds;
 }
 
 
 /* GIFT */
 function openGift() {
-    const gift = document.getElementById("gift");
-    const message = document.getElementById("finalMessage");
+
+    const gift =
+        document.getElementById("gift");
+
+    const message =
+        document.getElementById("finalMessage");
 
     gift.classList.add("opened");
 
     setTimeout(() => {
+
         gift.style.display = "none";
+
         message.classList.add("show");
 
         createHearts();
+
+        /* After showing existing gift message,
+           move to new gift-choice page */
+        setTimeout(() => {
+            goToPage("giftChoice");
+        }, 2500);
+
+    }, 700);
+}
+
+
+/* GIFT CHOICE */
+function chooseGift(choice) {
+
+    createHearts();
+
+    setTimeout(() => {
+        goToPage("final");
     }, 700);
 }
 
 
 /* HEARTS */
 function createHearts() {
+
     for (let i = 0; i < 35; i++) {
+
         setTimeout(() => {
-            const heart = document.createElement("div");
+
+            const heart =
+                document.createElement("div");
 
             heart.className = "heart";
 
-            const hearts = ["💗", "💖", "💕", "💘", "💋", "❤️"];
-            heart.innerText =
-                hearts[Math.floor(Math.random() * hearts.length)];
+            const hearts = [
+                "💗",
+                "💖",
+                "💕",
+                "💘",
+                "💋",
+                "❤️"
+            ];
 
-            heart.style.left = Math.random() * 100 + "vw";
+            heart.innerText =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
             heart.style.setProperty(
                 "--x",
                 (Math.random() * 200 - 100) + "px"
@@ -691,7 +1119,11 @@ function createHearts() {
 
             document.body.appendChild(heart);
 
-            setTimeout(() => heart.remove(), 7000);
+            setTimeout(
+                () => heart.remove(),
+                7000
+            );
+
         }, i * 100);
     }
 }
